@@ -1,0 +1,149 @@
+:root {
+  color: #f7f7f7;
+  background: #121217;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 280px;
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top, #33333f 0, transparent 38%),
+    #141419;
+}
+
+.calculator {
+  width: min(100%, 380px);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #3b3b46;
+  border-radius: 10px;
+  background: #202029;
+  box-shadow: 0 22px 60px rgb(0 0 0 / 42%);
+}
+
+.display-panel {
+  min-height: 137px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: 8px 18px 5px;
+  text-align: right;
+}
+
+.expression {
+  min-height: 22px;
+  overflow: hidden;
+  color: #aaaab2;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.display {
+  min-height: 60px;
+  overflow: hidden;
+  font-size: clamp(42px, 14vw, 58px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.error {
+  min-height: 20px;
+  overflow: hidden;
+  color: #ff9d9d;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.keypad {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, minmax(54px, 1fr));
+  gap: 2px;
+  padding: 2px 4px 4px;
+}
+
+.keypad button {
+  min-width: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #f8f8fa;
+  background: #32323c;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 80ms ease, transform 80ms ease;
+}
+
+.keypad button:hover:not(:disabled) {
+  background: #3c3c47;
+}
+
+.keypad button:active:not(:disabled) {
+  transform: scale(0.98);
+  background: #454551;
+}
+
+.keypad .number {
+  background: #3a3a45;
+  font-size: 18px;
+}
+
+.keypad .equals {
+  color: #101015;
+  background: #4cc2ff;
+  font-size: 20px;
+}
+
+.keypad .equals:hover:not(:disabled) {
+  background: #6acbfb;
+}
+
+.keypad button:focus-visible {
+  outline: 2px solid #8bd7ff;
+  outline-offset: -3px;
+}
+
+@media (max-width: 520px), (max-height: 700px) {
+  .page {
+    padding: 0;
+    place-items: stretch;
+  }
+
+  .calculator {
+    width: 100%;
+    min-height: 100dvh;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .display-panel {
+    min-height: 120px;
+  }
+}
