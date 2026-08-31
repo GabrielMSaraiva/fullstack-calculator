@@ -2,6 +2,8 @@
 
 A small calculator with a React and TypeScript frontend and a Go HTTP API. The interface takes its layout and dark theme from the Windows Standard Calculator while keeping the implementation focused on the assignment scope.
 
+![Full-stack calculator running in the browser](docs/calculator-preview.jpg)
+
 ## Features
 
 - Addition, subtraction, multiplication, and division
